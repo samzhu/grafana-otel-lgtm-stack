@@ -1,0 +1,47 @@
+{
+    "uid": "springboot-observability",
+    "title": "Spring Boot OTEL Demo Dashboard",
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "panels": [
+        {
+            "type": "timeseries",
+            "title": "JVM Heap Memory Used",
+            "datasource": "Prometheus",
+            "targets": [
+                {
+                    "expr": "process_runtime_jvm_memory_usage{service_name=\"springboot-otel-demo\", type=\"heap\"}"
+                }
+            ],
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                }
+            },
+            "gridPos": {
+                "x": 0,
+                "y": 0,
+                "w": 12,
+                "h": 8
+            }
+        },
+        {
+            "type": "logs",
+            "title": "Application Logs (springboot-otel-demo)",
+            "datasource": "Loki",
+            "targets": [
+                {
+                    "expr": "{service_name=\"springboot-otel-demo\"}"
+                }
+            ],
+            "gridPos": {
+                "x": 0,
+                "y": 8,
+                "w": 24,
+                "h": 8
+            }
+        }
+    ]
+}
