@@ -14,7 +14,7 @@ This environment includes the following core components:
 
 The overall data flow is: Application → OpenTelemetry Collector → Dedicated storage backend (Prometheus/Loki/Tempo) → Grafana unified query and presentation
 
-![LGTM Architecture](https://grafana.com/media/blog/otel-lgtm/architecture.png)
+![LGTM Architecture](https://grafana.com/media/blog/otel-lgtm-docker-image/docker-image_components.png)
 *Figure: OpenTelemetry Collector receives OTLP telemetry data (traces/metrics/logs) sent from applications, and forwards metrics to Prometheus, traces to Tempo, and logs to Loki; Grafana is pre-configured with these three data sources for observability queries.*
 
 ## Quick Start
